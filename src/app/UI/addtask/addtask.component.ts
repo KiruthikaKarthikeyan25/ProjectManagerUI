@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Task } from 'src/app/models/task';
 import * as $ from 'jquery';
-
 import { TitleService } from 'src/app/services/title.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { Parent } from 'src/app/models/parent';
@@ -10,10 +9,9 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Project } from 'src/app/models/project';
 import { User } from 'src/app/models/user';
 import { BehaviorSubject } from 'rxjs';
-declare var $:any;
 //import{} from 'ui-select'
-import {filter} from 'rxjs/Operators';
-import { pipeDef } from '@angular/core/src/view';
+//import {filter} from 'rxjs/Operators';
+//import { pipeDef } from '@angular/core/src/view';
 @Component({
   selector: 'app-addtask',
   templateUrl: './addtask.component.html',

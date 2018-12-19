@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AddtaskComponent } from './UI/addtask/addtask.component';
 import { AddprojectComponent } from './UI/addproject/addproject.component';
 import { AdduserComponent } from './UI/adduser/adduser.component';
-import { FilterPipe } from './pipes/filter.pipe';
+//import { FilterPipe } from './pipes/filter.pipe';
 import { ViewtaskComponent } from './UI/viewtask/viewtask.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import{NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +13,8 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
 import {HttpModule} from '@angular/http'
 import { SharedService } from './services/shared.service';
 import {HttpClientModule} from '@angular/common/http';
-import { DatePipe }from '@angular/common'
+import {HttpClientTestingModule,HttpTestingController } from '@angular/common/http/testing';
+// import { DatePipe }from '@angular/common'
 
 const appRoutes:Routes=[
   {path:'addtask', component:AddtaskComponent},
@@ -29,14 +30,13 @@ const appRoutes:Routes=[
     AppComponent,
     AddtaskComponent,
     AddprojectComponent,
-    AdduserComponent,
-    FilterPipe,
+    AdduserComponent,    
     ViewtaskComponent     
   ],
   imports: [
-   BrowserModule,RouterModule.forRoot(appRoutes),FormsModule,SelectDropDownModule,HttpModule,HttpClientModule,ReactiveFormsModule
+    HttpClientTestingModule, BrowserModule,RouterModule.forRoot(appRoutes),FormsModule,SelectDropDownModule,HttpModule,HttpClientModule,ReactiveFormsModule
   ],
-  providers: [SharedService,DatePipe],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

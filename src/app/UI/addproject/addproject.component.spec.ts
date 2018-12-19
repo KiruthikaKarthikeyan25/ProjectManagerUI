@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import * as $ from 'jquery';
 import {DatePipe} from '@angular/common';
+declare var $:any;
 
 describe('AddprojectComponent', () => {
   let component: AddprojectComponent;

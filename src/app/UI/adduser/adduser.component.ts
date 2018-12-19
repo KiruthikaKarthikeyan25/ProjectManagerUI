@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 import { TitleService } from 'src/app/services/title.service';
 import { Project } from 'src/app/models/project';
 import {Location} from '@angular/common';
-declare var $:any;
+//declare var $:any;
 
 @Component({
   selector: 'app-adduser',
@@ -68,9 +68,9 @@ export class AdduserComponent implements OnInit {
   }
   Isuserexist(){
     var empid=($('#txtEmpId').val());        
-    console.log(this.users1.length);
+    //console.log(this.users1.length);
     this.users=this.users1.filter(i=>i.EmployeeId==empid);
-    console.log(this.users.length);
+    //console.log(this.users.length);
     if(this.users.length==0)
     {
       this.empexist=0;
@@ -165,13 +165,17 @@ export class AdduserComponent implements OnInit {
       this.Recordadded="Enter Employee Id";
     }   
     else{   
-      this.Isuserexist();     
+      this.Isuserexist();    
+      console.log(this.empexist);
+      console.log(this.item.EmployeeId)
+      console.log($('#txtEmpId').val());
+     
       if(this.empexist==0 || this.item.EmployeeId==$('#txtEmpId').val()){         
        this._service.EditUser(this.item)
             .subscribe(i=>
             {
              this._service.GetAllusers().subscribe(j=>this.users=j);
-        });
+            });
       this.Reset();
       this.Recordadded='Record Updated successfully';
       this.location.replaceState('adduser');   
@@ -185,8 +189,4 @@ export class AdduserComponent implements OnInit {
       }
     }
   }
-  validations()
-  {
-     
-  }  
 }

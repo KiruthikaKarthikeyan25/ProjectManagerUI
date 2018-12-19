@@ -3,7 +3,7 @@ import { Project } from 'src/app/models/project';
 import { Router } from '@angular/router';
 //import $ from 'jquery';
 import * as $ from 'jquery';
-declare var $:any;
+//declare var $:any;
 //import * as $AB from 'jquery';
 //declare var jQuery: jquery;
 import { TitleService } from 'src/app/services/title.service';
@@ -13,7 +13,7 @@ import { SharedService } from 'src/app/services/shared.service';
 import { User } from 'src/app/models/user';
 import { isNgTemplate } from '@angular/compiler';
 import { ValueTransformer } from '@angular/compiler/src/util';
-import{Location,DatePipe} from '@angular/common';
+import{Location} from '@angular/common';
 import { iif } from 'rxjs';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
@@ -44,7 +44,7 @@ config = {
   displayKey:"FirstName",//if objects array passed which key to be displayed defaults to description,
   search:true //enables the search plugin to search in the list
   }
-  constructor(private datePipe:DatePipe, _router:Router,private _title:TitleService, private _service:SharedService,private location:Location) { 
+  constructor(private _router:Router,private _title:TitleService, private _service:SharedService,private location:Location) { 
     this.item=new Project(); 
     this.item1=new Project();   
     this._service.GetAllProjects().subscribe(i=>this.projects=i);

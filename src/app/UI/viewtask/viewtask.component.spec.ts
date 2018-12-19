@@ -40,7 +40,10 @@ describe('ViewtaskComponent', () => {
     expect(component).toBeTruthy(); 
    });   
    it('End a task', () => {    
-    component.Delete;  
+    component.EndTask;  
     expect(component).toBeTruthy(); 
    });   
+  //  it('Edit button click navigate to update task page', () => {
+  //   component.Edit(10);
+  // });  
 });

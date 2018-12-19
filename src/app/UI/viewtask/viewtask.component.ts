@@ -6,7 +6,8 @@ import { TitleService } from 'src/app/services/title.service';
 import { Router } from '@angular/router';
 import { identity } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-declare var $:any;
+//declare var $:any;
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-viewtask',
